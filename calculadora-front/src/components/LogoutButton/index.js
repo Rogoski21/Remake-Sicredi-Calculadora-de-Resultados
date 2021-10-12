@@ -50,7 +50,7 @@ export default function Button({
 
     return (
         <MUIButton
-            className={${getColor()} ${classes.content} ${className}}
+            className={`${getColor()} ${classes.content} ${className}`}
             variant="contained"
             color="primary"
             onClick={onClick}
