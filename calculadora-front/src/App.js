@@ -11,6 +11,19 @@ import { Routes } from "./routes";
 import theme from "./styles/customMuiTheme.js";
 
 function App() {
+
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+    const theme = React.useMemo(
+      () =>
+        createTheme({
+          palette: {
+            mode: prefersDarkMode ? 'dark' : 'light',
+          },
+        }),
+      [prefersDarkMode],
+    );
+    
     return (
         <Provider store={store}>
             <ThemeProvider theme={theme}>

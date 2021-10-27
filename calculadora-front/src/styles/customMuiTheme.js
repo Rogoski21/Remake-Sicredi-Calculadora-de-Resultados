@@ -15,11 +15,20 @@ let theme = createMuiTheme({
             main: "#3fa110",
         },
         input: {
-            border: "#DCDCE5",
-            text: "#A8A8B3",
+            border: {
+                main:"#DCDCE5",
+                dark: "#2b2b2b",
+            },
+                
+            text:
+            {
+                main: "#A8A8B3",
+                dark: "#404047",
+            }
         },
-        background: {
-            default: "#F0F0F5",
+        background: {                  
+            main:"#F0F0F5",
+            dark: "#2b2b2b",
         },
         error: {
             main: "#EB5757",
