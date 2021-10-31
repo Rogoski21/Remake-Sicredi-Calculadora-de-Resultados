@@ -99,7 +99,8 @@ export function ProductsUserPage() {
             >
                 <Grid item>
                     <LogoutButton  onClick={() => {
-                        window.localStorage.removeItem("token").history.push("/login") }}> </LogoutButton>
+                        window.localStorage.removeItem("token")
+                        history.push("/login") }}> </LogoutButton>
                 </Grid>
                 <Grid item>
                     <ButtonSicredi href={'https://www.sicredi.com.br/site/home'}/>
