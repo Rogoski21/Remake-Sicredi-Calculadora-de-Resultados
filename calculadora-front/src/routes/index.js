@@ -20,6 +20,9 @@ import RegisterUserPage from "../pages/RegisterUserPage";
 import ResetPassword from "../pages/ResetPassword";
 import theme from "../styles/customMuiTheme";
 import { isAuthenticated } from "../utils/authentication.js";
+import { useDispatch, useSelector } from "react-redux";
+import { types } from "../reducers/types";
+import Button from "../components/Button";
 
 const useStyles = makeStyles({
     root: {
@@ -146,8 +149,15 @@ const AdminRoute = ({ children, ...rest }) => {
 export const Routes = () => {
     const classes = useStyles();
 
+    const dispatch = useDispatch();
+
+    console.log(dispatch({ type: types.GET_THEME, value: 'test' }))
+
+    // const state = useSelector((state) => state.isDark);
+
     return (
         <Router>
+            <Button onClick={() => dispatch({ type: types.GET_THEME })}>CLICK</Button>
             <div className={classes.root}>
                 <main className={classes.content}>
                     <Switch>

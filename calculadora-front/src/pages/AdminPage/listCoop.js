@@ -8,7 +8,8 @@ import { openSnackbar } from "../../actions/snackbarActions.js";
 import Table from "../../components/Table";
 import useApiRequest from "../../hooks/useApiRequest.js";
 import api from "../../services/api.js";
-import theme from "../../styles/customMuiTheme.js";
+// import theme from "../../styles/customMuiTheme.js";
+import useTheme from "../../styles/customMuiTheme.js";
 
 const useStyles = makeStyles({
     container: {
@@ -24,14 +25,14 @@ const useStyles = makeStyles({
     },
     productTitle: {
         fontSize: 36,
-        color: theme.palette.primary.main,
+        // color: theme.palette.primary.main,
     },
     addButton: {
-        backgroundColor: theme.palette.quaternary.main,
+        // backgroundColor: theme.palette.quaternary.main,
         transition: "opacity 0.3s ease",
 
         "&:hover": {
-            backgroundColor: theme.palette.quaternary.main,
+            // backgroundColor: theme.palette.quaternary.main,
             opacity: "0.90",
         },
     },
@@ -52,6 +53,9 @@ const columns = [
 ];
 
 export default function ListCoop() {
+    const theme = useTheme()
+
+    console.log(theme)
     const { data, loading, reload } = useApiRequest(true, "/cooperative");
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     const isLarge = useMediaQuery(theme.breakpoints.up("md"));
